@@ -21,6 +21,7 @@
       height: 100vh;
       margin: 0;
       padding-top: 20px; /* Adds spacing to the top */
+      overflow-y: auto; /* Enables vertical scrolling */
     }
 
     h1 {
@@ -40,6 +41,8 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto; /* Center the grid container */
+      max-height: 80vh; /* Set max height for the container to trigger scroll */
+      overflow-y: auto; /* Enable scrolling if the content overflows */
     }
 
     .section {
@@ -181,6 +184,3 @@
   </div>
 </body>
 </html>
-
-
-
