@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal për Studentët</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+           
+            color: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+             background: linear-gradient(90deg, #22fa08, #13e7ee, #13e7ee, #fa08f3);
+            background-size: 400% 400%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+            @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 50% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            75% {
+                background-position: 50% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+       
+       
+        header {
+            background-color: purple;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 7px solid white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 2px;
+            background-color: ;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #00ff64;
+            height: 20px;
+            border-radius: 30px;
+            box-shadow: 10px 10px;
+           
+        }
+       
+        nav ul:hover {
+          transform: scale(1.02);
+        }
+
+        nav ul li {
+            display: inline ;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ad04f1;
+            transform: scale(1.05);
+           
+        }
+
+        /* Content Styles */
+        .content {
+            background: white;
+            margin-top: 30px ;
+            padding: 30px;
+            position: center;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .content:hover {
+            transform: translateY(-180px);
+        }
+
+        .content h2 {
+            color: white;
+            font-size: 28px;
+           background: linear-gradient(90deg, #22fa08, #13e7ee, #13e7ee, #fa08f3);
+            border-radius: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .content button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .content button:hover {
+            background-color: purple ;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+      <section>
+        <h1>Programi Matura</h1>    <h1>Provoni njohuritë</h1>
+        <nav>
+            <ul>
+                <li><a href="xhagorio.html">Ktheu</a></li>
+            </ul>
+        </nav>
+        </section>
+      </header>
+
+    <div class="content">
+        <h2>Provoni njohuritë tuaja</h2>
+        <p>Klikoni në lidhjen më poshtë për të hyrë në Kahoot dhe për të testuar njohuritë tuaja:</p>
+        <a href="https://kahoot.it" target="_blank">
+            <button>Shko në Kahoot</button>
+        </a>
+    </div>
+</body>
+</html>
+
