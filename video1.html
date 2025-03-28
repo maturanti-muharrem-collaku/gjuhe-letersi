@@ -38,14 +38,14 @@
       border-radius: 5px;
     }
 
-    /* Make sure the video fills the entire viewport */
-    video {
+    /* Ensure the video iframe covers the entire screen */
+    iframe {
       position: absolute;
       top: 60px; /* Space below the nav bar */
       left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensures the video fills the screen without distortion */
+      height: calc(100% - 60px); /* Subtract nav height from total height */
+      border: none; /* Remove border from iframe */
     }
   </style>
 </head>
@@ -54,15 +54,10 @@
   <!-- Navigation Bar -->
   <nav>
     <a href="#home">Kthehu mbrapa</a>
-    
   </nav>
 
-  <!-- Video Section -->
-  <video controls>
-    <source src="https://youtu.be/kxY8ZI4sTW4" type="video/mp4">
-
-    Your browser does not support the video tag.
-  </video>
+  <!-- YouTube Video (using iframe for embedding) -->
+  <iframe src="https://www.youtube.com/embed/kxY8ZI4sTW4" allowfullscreen></iframe>
 
 </body>
 </html>
