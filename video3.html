@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Page Video</title>
+  <style>
+    /* Make sure the video and nav occupy full width and height */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Prevents scrolling */
+    }
+
+    /* Styling for navigation bar */
+    nav {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      padding: 15px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10; /* Ensures the nav is above the video */
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 0 15px;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+      border-radius: 5px;
+    }
+
+    /* Make sure the video fills the entire viewport */
+    video {
+      position: absolute;
+      top: 60px; /* Space below the nav bar */
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video fills the screen without distortion */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#home">Kthehu mbrapa</a>
+    
+  </nav>
+
+  <!-- Video Section -->
+  <video controls>
+    <source src="https://youtu.be/kxY8ZI4sTW4" type="video/mp4">
+
+    Your browser does not support the video tag.
+  </video>
+
+</body>
+</html>
