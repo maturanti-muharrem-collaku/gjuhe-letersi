@@ -10,17 +10,16 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-           
             color: #333;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-             background: linear-gradient(90deg, #22fa08, #13e7ee, #13e7ee, #fa08f3);
+            background: linear-gradient(90deg, #22fa08, #13e7ee, #13e7ee, #fa08f3);
             background-size: 400% 400%;
-            animation: gradientAnimation 5s ease infinite;
+            animation: gradientAnimation 7s ease infinite;
         }
-            @keyframes gradientAnimation {
+        @keyframes gradientAnimation {
             0% {
                 background-position: 0% 50%;
             }
@@ -38,20 +37,20 @@
             }
         }
        
-       
         header {
-            background-color: purple;
+            background-color: #6A1B9A;
             color: white;
-            padding: 20px;
+            padding: 25px 20px;
             text-align: center;
             border-bottom: 7px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
             font-size: 36px;
             letter-spacing: 2px;
-            background-color: ;
+            font-weight: bold;
         }
 
         nav ul {
@@ -59,18 +58,16 @@
             padding: 10px;
             margin-top: 20px;
             background-color: #00ff64;
-            height: 20px;
+            height: 35px;
             border-radius: 30px;
-            box-shadow: 10px 10px;
-           
-        }
-       
-        nav ul:hover {
-          transform: scale(1.02);
+            box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         nav ul li {
-            display: inline ;
+            display: inline;
             margin: 0 20px;
         }
 
@@ -85,36 +82,41 @@
         nav ul li a:hover {
             color: #ad04f1;
             transform: scale(1.05);
-           
         }
 
         /* Content Styles */
         .content {
             background: white;
-            margin-top: 30px ;
-            padding: 30px;
-            position: center;
+            margin-top: 70px;
+            padding: 40px 60px;
+            position: relative;
             text-align: center;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 50px;
+            border-radius: 20px;
             transition: transform 0.5s ease-in-out;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .content:hover {
-            transform: translateY(-180px);
+            transform: translateY(-40px);
         }
 
         .content h2 {
-            color: white;
-            font-size: 28px;
-           background: linear-gradient(90deg, #22fa08, #13e7ee, #13e7ee, #fa08f3);
-            border-radius: 20px;
+            font-size: 32px;
+            color: #333;
+            font-weight: 600;
+            background: linear-gradient(90deg, #22fa08, #13e7ee, #fa08f3);
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         .content p {
             font-size: 18px;
             color: #666;
             margin: 20px 0;
+            line-height: 1.6;
         }
 
         .content button {
@@ -130,19 +132,19 @@
         }
 
         .content button:hover {
-            background-color: purple ;
+            background-color: #6A1B9A;
             transform: scale(1.1);
         }
 
         /* Footer */
         footer {
-            background-color: #333;
+            background-color: purple;
             color: white;
             text-align: center;
             padding: 15px;
-            font-size: 14px;
+            font-size: 15px;
             position: relative;
-            bottom: 0;
+            bottom: 10px;
             width: 100%;
         }
 
@@ -151,15 +153,16 @@
 <body>
 
     <header>
-      <section>
-        <h1>Programi Matura</h1>    <h1>Provoni njohuritë</h1>
-        <nav>
-            <ul>
-                <li><a href="xhagorio.html">Kthehu</a></li>
-            </ul>
-        </nav>
+        <section>
+            <h1>Programi Matura</h1>
+            <h2>Provoni njohuritë</h2>
+            <nav>
+                <ul>
+                    <li><a href="xhagorio.html">Kthehu</a></li>
+                </ul>
+            </nav>
         </section>
-      </header>
+    </header>
 
     <div class="content">
         <h2>Provoni njohuritë tuaja</h2>
@@ -168,6 +171,11 @@
             <button>Shko në Kahoot</button>
         </a>
     </div>
+
+    <footer>
+        <p>&copy; Maturanti "Muharrem Collaku" - Të gjitha të drejtat e rezervuara.</p>
+    </footer>
+
+
 </body>
 </html>
-
