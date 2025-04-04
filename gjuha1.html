@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programi Matura - Gjuha</title>
     <style>
-        /* Stilizimi bazë i faqes */
+        /* Basic Page Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -14,14 +14,13 @@
             color: #333;
         }
 
-        /* Header */
+        /* Header Styling */
         header {
             background: linear-gradient(90deg, #1e3c72, #2a5298);
             color: white;
             padding: 30px 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1s ease-in-out;
         }
 
         header h1 {
@@ -31,12 +30,24 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        /* Menu navigimi */
+        /* Navigation Bar Styling */
         nav {
             background-color: #333;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: sticky ;
-            top:0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8em;
+            color: white;
+            cursor: pointer;
+            padding: 20px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
         }
 
         nav ul {
@@ -48,17 +59,19 @@
         }
 
         nav ul li {
-            margin: 0 20px;
+            margin: 0 15px;
             position: relative;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            padding: 15px 10px;
+            padding: 12px 18px;
             display: block;
-            transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
             border-radius: 5px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
@@ -67,14 +80,13 @@
             transform: scale(1.1);
         }
 
-        /* Seksionet */
+        /* Section Styling */
         section {
             padding: 40px;
             margin: 30px 15px;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1s ease-in-out;
         }
 
         section h2 {
@@ -108,7 +120,7 @@
             text-decoration: underline;
         }
 
-        /* Footer */
+        /* Footer Styling */
         footer {
             background: #2a5298;
             color: white;
@@ -116,33 +128,41 @@
             padding: 15px 0;
             width: 100%;
             bottom: 0;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Animacionet */
-        @keyframes slideIn {
-            0% { transform: translateY(-50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Përgatitje për pajisje të vogla */
+        /* Media Query for Small Screens (Mobile) */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
             nav ul {
-                flex-direction: row;
-                margin: 0;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                z-index: 999;
             }
 
             nav ul li {
-                margin-bottom: 10px;
+                margin: 10px 0;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            nav ul li a {
+                font-size: 1.3em;
+                padding: 12px 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
             }
 
             section {
@@ -159,8 +179,9 @@
         <h1>Programi Matura - Gjuha</h1>
     </header>
 
-    <!-- Menu navigimi -->
-    <nav>
+    <!-- Navigation Bar -->
+    <nav id="nav">
+        <div class="hamburger" id="hamburger">&#9776;</div>
         <ul>
             <li><a href="index.html">Faqja kryesore</a></li>
             <li><a href="seksioni1">Teksti Joletrar</a></li>
@@ -171,7 +192,7 @@
         </ul>
     </nav>
 
-    <!-- Seksioni 1 -->
+    <!-- Section 1 -->
     <section id="seksioni1">
         <h2>Teksti joletrar</h2>
         <ul>
@@ -181,7 +202,7 @@
         </ul>
     </section>
 
-    <!-- Seksioni 2 -->
+    <!-- Section 2 -->
     <section id="seksioni2">
         <h2>Morfologjia</h2>
         <ul>
@@ -195,7 +216,7 @@
         </ul>
     </section>
 
-    <!-- Seksioni 3 -->
+    <!-- Section 3 -->
     <section id="seksioni3">
         <h2>Sintaksa</h2>
         <ul>
@@ -211,7 +232,7 @@
         </ul>
     </section>
 
-    <!-- Seksioni 4 -->
+    <!-- Section 4 -->
     <section id="seksioni4">
         <h2>Leksikologjia</h2>
         <ul>
@@ -220,15 +241,25 @@
         </ul>
     </section>
 
-    <!-- Seksioni 5 -->
+    <!-- Section 5 -->
     <section id="seksioni5">
-       <a href="gjuha.html"><h2>Drejtshkrim dhe pikësimi</h2></a> 
+        <a href="gjuha.html"><h2>Drejtshkrim dhe pikësimi</h2></a> 
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Programi Matura - Gjuha</p>
     </footer>
+
+    <script>
+        // JavaScript for Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', function() {
+            nav.classList.toggle('active'); // Toggle the 'active' class
+        });
+    </script>
 
 </body>
 </html>
