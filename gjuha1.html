@@ -22,7 +22,6 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             animation: slideIn 1s ease-in-out;
-            
         }
 
         header h1 {
@@ -33,17 +32,21 @@
         }
 
         /* Menu navigimi */
+        nav {
+            background-color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 10px 0;
+            margin: 0;
             display: flex;
             justify-content: center;
-            background: black;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
             position: relative;
         }
 
@@ -52,12 +55,15 @@
             text-decoration: none;
             font-size: 1.2em;
             text-transform: uppercase;
-            padding: 5px 0;
-            transition: color 0.3s, transform 0.3s;
+            padding: 15px 10px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+            border-radius: 5px;
         }
 
         nav ul li a:hover {
-            color: #f1c40f;
+            background-color: #f39c12;
+            color: #333;
             transform: scale(1.1);
         }
 
@@ -108,7 +114,6 @@
             color: white;
             text-align: center;
             padding: 15px 0;
-          
             width: 100%;
             bottom: 0;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -132,7 +137,8 @@
             }
 
             nav ul {
-                flex-direction: column;
+                flex-direction: row;
+                margin: 0;
             }
 
             nav ul li {
@@ -140,7 +146,7 @@
             }
 
             section {
-                margin: 15px;
+                margin: 10px;
                 padding: 20px;
             }
         }
@@ -151,25 +157,27 @@
     <!-- Header -->
     <header>
         <h1>Programi Matura - Gjuha</h1>
-       
     </header>
- <nav>
-            <ul>
-                  <li><a href="index.html">Faqja kryesore</a></li>
-                <li><a href="#seksioni1">Teksti Joletrar</a></li>
-                <li><a href="#seksioni2">Morfologjia</a></li>
-                <li><a href="#seksioni3">Sintaksa</a></li>
-                <li><a href="#seksioni4">Leksikologjia</a></li>
-                <li><a href="#seksioni5">Drejtshkrimi dhe pikësimi </a></li>
-            </ul>
-        </nav>
+
+    <!-- Menu navigimi -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Faqja kryesore</a></li>
+            <li><a href="gjuha.html">Teksti Joletrar</a></li>
+            <li><a href="gjuha.html">Morfologjia</a></li>
+            <li><a href="gjuha.html">Sintaksa</a></li>
+            <li><a href="gjuha.html">Leksikologjia</a></li>
+            <li><a href="gjuha.html">Drejtshkrimi dhe pikësimi</a></li>
+        </ul>
+    </nav>
+
     <!-- Seksioni 1 -->
     <section id="seksioni1">
         <h2>Teksti joletrar</h2>
         <ul>
-            <li><a href="#nentema1">Tekstet përshkruese</a></li>
-            <li><a href="#nentema2">Tekstet rrëfyese</a></li>
-            <li><a href="#nentema3">Tekstet argumentuese</a></li>
+            <li><a href="gjuha.html">Tekstet përshkruese</a></li>
+            <li><a href="gjuha.html">Tekstet rrëfyese</a></li>
+            <li><a href="gjuha.html">Tekstet argumentuese</a></li>
         </ul>
     </section>
 
@@ -177,13 +185,13 @@
     <section id="seksioni2">
         <h2>Morfologjia</h2>
         <ul>
-            <li><a href="#nentema4">Emri</a></li>
-            <li><a href="#nentema5">Folja</a></li>
-            <li><a href="#nentema6">Mbiemri</a></li>
-            <li><a href="#nentema6">Përemri</a></li>
-            <li><a href="#nentema6">Ndajfolja</a></li>
-            <li><a href="#nentema6">Lidhëza</a></li>
-            <li><a href="#nentema6">Fjalëformimi</a></li>
+            <li><a href="gjuha.html">Emri</a></li>
+            <li><a href="gjuha.html">Folja</a></li>
+            <li><a href="gjuha.html">Mbiemri</a></li>
+            <li><a href="gjuha.html">Përemri</a></li>
+            <li><a href="gjuha.html">Ndajfolja</a></li>
+            <li><a href="gjuha.html">Lidhëza</a></li>
+            <li><a href="gjuha.html">Fjalëformimi</a></li>
         </ul>
     </section>
 
@@ -191,18 +199,15 @@
     <section id="seksioni3">
         <h2>Sintaksa</h2>
         <ul>
-            <li><a href="#nentema7">Gjymtyrët e dyta</a></li>
-            <li><a href="#nentema8">Kundrinori</a></li>
-            <li><a href="#nentema9">Rrethanori</a></li>
-            <li><a href="#nentema7">Përcaktori</a></li>
-            <li><a href="#nentema7">Përcaktor kallzuesor</a></li>
-            <li><a href="#nentema7">Gjymtyrët homogjenë</a></li>
-            <li><a href="#nentema7">Gjymtyrët e vecuara</a></li>
-            <li><a href="#nentema7">Fjalia e thjeshtë dhe fjalia e përbërë</a></li>
-            <li><a href="#nentema7">Fjalia e përbërë me bashkërenditje/nënrenditje</a></li>
-            <li><a href="#nentema7"></a></li>
-            <li><a href="#nentema7">Nëntema 7: Stilet e shkrimit</a></li>
-            <li><a href="#nentema7">Nëntema 7: Stilet e shkrimit</a></li>
+            <li><a href="gjuha.html">Gjymtyrët e dyta</a></li>
+            <li><a href="gjuha.html">Kundrinori</a></li>
+            <li><a href="gjuha.html">Rrethanori</a></li>
+            <li><a href="gjuha.html">Përcaktori</a></li>
+            <li><a href="gjuha.html">Përcaktor kallzuesor</a></li>
+            <li><a href="gjuha.html">Gjymtyrët homogjenë</a></li>
+            <li><a href="gjuha.html">Gjymtyrët e vecuara</a></li>
+            <li><a href="gjuha.html">Fjalia e thjeshtë dhe fjalia e përbërë</a></li>
+            <li><a href="gjuha.html">Fjalia e përbërë me bashkërenditje/nënrenditje</a></li>
         </ul>
     </section>
 
@@ -210,20 +215,14 @@
     <section id="seksioni4">
         <h2>Leksikologjia</h2>
         <ul>
-            <li><a href="#nentema10">Nëntema 10: Analiza e teksteve letrare</a></li>
-            <li><a href="#nentema11">Nëntema 11: Llojet e teksteve dhe format</a></li>
-            <li><a href="#nentema12">Nëntema 12: Teknikat e interpretimit</a></li>
+            <li><a href="gjuha.html">Ligjërimet në gjuhën shqipe</a></li>
+            <li><a href="gjuha.html">Stilet funksionale në gjuhën shqipe</a></li>
         </ul>
     </section>
 
     <!-- Seksioni 5 -->
     <section id="seksioni5">
-        <h2>Drejtshkrim dhe pikësimi</h2>
-        <ul>
-            <li><a href="#nentema13">Nëntema 13: Udhëzime për përgatitjen e matura</a></li>
-            <li><a href="#nentema14">Nëntema 14: Leksione dhe ushtrime praktike</a></li>
-            <li><a href="#nentema15">Nëntema 15: Menaxhimi i kohës gjatë provimeve</a></li>
-        </ul>
+       <a href="gjuha.html"><h2>Drejtshkrim dhe pikësimi</h2></a> 
     </section>
 
     <!-- Footer -->
