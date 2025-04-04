@@ -36,12 +36,17 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
-        .hamburger {
+        /* Hide the checkbox by default */
+        input[type="checkbox"] {
             display: none;
-            font-size: 1.8em;
+        }
+
+        /* Label for the hamburger icon */
+        label {
+            display: none;
+            font-size: 2em;
             color: white;
             cursor: pointer;
             padding: 20px;
@@ -50,6 +55,7 @@
             top: 20px;
         }
 
+        /* Menu styling */
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -68,7 +74,6 @@
             text-decoration: none;
             padding: 12px 18px;
             display: block;
-            border-radius: 5px;
             font-size: 1.1em;
             text-transform: uppercase;
             transition: all 0.3s ease;
@@ -148,12 +153,14 @@
                 margin: 10px 0;
             }
 
-            nav.active ul {
-                display: flex;
+            /* Display the label (hamburger icon) */
+            label {
+                display: block;
             }
 
-            .hamburger {
-                display: block;
+            /* Show the menu if the checkbox is checked */
+            input[type="checkbox"]:checked + ul {
+                display: flex;
             }
 
             nav ul li a {
@@ -180,8 +187,11 @@
     </header>
 
     <!-- Navigation Bar -->
-    <nav id="nav">
-        <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav>
+        <!-- Checkbox for toggle effect -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle">&#9776;</label>
+        
         <ul>
             <li><a href="index.html">Faqja kryesore</a></li>
             <li><a href="seksioni1">Teksti Joletrar</a></li>
@@ -250,16 +260,6 @@
     <footer>
         <p>&copy; 2025 Programi Matura - Gjuha</p>
     </footer>
-
-    <script>
-        // JavaScript for Hamburger Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const nav = document.getElementById('nav');
-
-        hamburger.addEventListener('click', function() {
-            nav.classList.toggle('active'); // Toggle the 'active' class
-        });
-    </script>
 
 </body>
 </html>
