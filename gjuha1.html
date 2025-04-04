@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programi Matura - Gjuha</title>
     <style>
-        /* Basic Page Styling */
+        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -32,57 +32,99 @@
 
         /* Navigation Bar Styling */
         nav {
+            position: relative;
             background-color: #333;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Hide the checkbox by default */
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        /* Label for the hamburger icon */
-        label {
-            display: none;
-            font-size: 2em;
-            color: white;
-            cursor: pointer;
-            padding: 20px;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-        }
-
-        /* Menu styling */
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0 15px;
-            position: relative;
+            margin: 0 20px;
         }
 
         nav ul li a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            padding: 12px 18px;
-            display: block;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 600;
             text-transform: uppercase;
-            transition: all 0.3s ease;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #f39c12;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
         }
 
         nav ul li a:hover {
-            background-color: #f39c12;
-            color: #333;
+            color: #f39c12;
             transform: scale(1.1);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-button {
+            display: none;
+            background: #333;
+            border: none;
+            color: white;
+            font-size: 1.8em;
+            cursor: pointer;
+            padding: 15px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        /* Mobile Menu Styling */
+        .mobile-menu {
+            display: none;
+            background-color: #333;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mobile-menu ul li {
+            margin: 15px 0;
+        }
+
+        .mobile-menu ul li a {
+            font-size: 1.4em;
+        }
+
+        /* Show Mobile Menu */
+        .mobile-menu.show {
+            display: block;
         }
 
         /* Section Styling */
@@ -135,48 +177,29 @@
             bottom: 0;
         }
 
-        /* Media Query for Small Screens (Mobile) */
+        /* Media Query for Mobile */
         @media (max-width: 768px) {
             nav ul {
                 display: none;
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
                 width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: #333;
-                z-index: 999;
             }
 
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            /* Display the label (hamburger icon) */
-            label {
+            .mobile-menu-button {
                 display: block;
             }
 
-            /* Show the menu if the checkbox is checked */
-            input[type="checkbox"]:checked + ul {
+            .mobile-menu ul {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            nav ul.show {
                 display: flex;
             }
-
-            nav ul li a {
-                font-size: 1.3em;
-                padding: 12px 20px;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            section {
-                margin: 10px;
-                padding: 20px;
-            }
         }
+
     </style>
 </head>
 <body>
@@ -188,21 +211,33 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <!-- Checkbox for toggle effect -->
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle">&#9776;</label>
-        
-        <ul>
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-button" id="menu-btn">&#9776;</button>
+
+        <!-- Navigation Links -->
+        <ul id="nav-links">
             <li><a href="index.html">Faqja kryesore</a></li>
-            <li><a href="seksioni1">Teksti Joletrar</a></li>
-            <li><a href="seksioni2">Morfologjia</a></li>
-            <li><a href="seksioni3">Sintaksa</a></li>
-            <li><a href="seksioni4">Leksikologjia</a></li>
-            <li><a href="seksioni5">Drejtshkrimi dhe pikësimi</a></li>
+            <li><a href="#seksioni1">Teksti Joletrar</a></li>
+            <li><a href="#seksioni2">Morfologjia</a></li>
+            <li><a href="#seksioni3">Sintaksa</a></li>
+            <li><a href="#seksioni4">Leksikologjia</a></li>
+            <li><a href="#seksioni5">Drejtshkrimi dhe pikësimi</a></li>
         </ul>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="index.html">Faqja kryesore</a></li>
+                <li><a href="#seksioni1">Teksti Joletrar</a></li>
+                <li><a href="#seksioni2">Morfologjia</a></li>
+                <li><a href="#seksioni3">Sintaksa</a></li>
+                <li><a href="#seksioni4">Leksikologjia</a></li>
+                <li><a href="#seksioni5">Drejtshkrimi dhe pikësimi</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Section 1 -->
+    <!-- Content Sections -->
     <section id="seksioni1">
         <h2>Teksti joletrar</h2>
         <ul>
@@ -212,7 +247,6 @@
         </ul>
     </section>
 
-    <!-- Section 2 -->
     <section id="seksioni2">
         <h2>Morfologjia</h2>
         <ul>
@@ -226,7 +260,6 @@
         </ul>
     </section>
 
-    <!-- Section 3 -->
     <section id="seksioni3">
         <h2>Sintaksa</h2>
         <ul>
@@ -242,7 +275,6 @@
         </ul>
     </section>
 
-    <!-- Section 4 -->
     <section id="seksioni4">
         <h2>Leksikologjia</h2>
         <ul>
@@ -251,15 +283,25 @@
         </ul>
     </section>
 
-    <!-- Section 5 -->
     <section id="seksioni5">
-        <a href="gjuha.html"><h2>Drejtshkrim dhe pikësimi</h2></a> 
+        <a href="gjuha.html"><h2>Drejtshkrimi dhe pikësimi</h2></a> 
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Programi Matura - Gjuha</p>
     </footer>
+
+    <script>
+        // Toggle the mobile menu
+        const menuButton = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        menuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('show');
+        });
+    </script>
 
 </body>
 </html>
