@@ -5,7 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vepra "Xha Gorio"</title>
     <style>
-        body {
+a {
+    color: #45a049;         /* Makes the link color inherit from its parent */
+    text-decoration: none;  /* Removes the underline */
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* Button Style for Feedback Link */
+.feedback-btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.feedback-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #808080;
@@ -326,6 +354,10 @@ Një tjetër mesazh i romanit është rëndësia e ruajtjes së integritetit mor
             });
         });
     </script>
+
+    <footer>
+        <p>&copy; Na jepni përshtypjet mbi faqen</p>
+        <p><a href="https://forms.gle/aCmVj8s5Uu2KpvT4A" target="_blank">Kliko këtu</a></p>
+    </footer>
 </body>
 </html>
-
