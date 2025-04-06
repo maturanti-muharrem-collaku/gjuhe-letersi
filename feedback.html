@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Form Viewer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #27ae60); /* Dark green gradient */
+            color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            transition: background 0.5s ease;
+        }
+
+        header {
+            background-color: #27ae60; /* Dark Green Header */
+            color: white;
+            padding: 30px;
+            width: 100%;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            padding: 30px;
+            background-color: #34495e; /* Slightly lighter dark background */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-container {
+            text-align: center;
+        }
+
+        .form-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #27ae60; /* Dark Green Button */
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container button:hover {
+            background-color: #2ecc71; /* Lighter Green Hover */
+            transform: scale(1.05);
+        }
+
+        .form-container button:active {
+            transform: scale(0.98);
+        }
+
+        .form-container button i {
+            margin-right: 10px;
+        }
+
+        .footer {
+            color: #ecf0f1;
+            margin-top: 30px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        Microsoft Form Viewer
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <button onclick="openForm()">
+                <i class="fa fa-paper-plane"></i> Open the Form
+            </button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Powered by <a href="https://www.microsoft.com/en-us/microsoft-365/forms" target="_blank">Microsoft Forms</a> | Designed with care</p>
+    </div>
+
+    <script>
+        function openForm() {
+            // Fixed Microsoft Form URL (replace with your actual form URL)
+            const formURL = "https://forms.office.com/r/tGgzpmZNT5";  // Replace with your actual form URL
+            window.open(formURL, '_blank');  // Opens the form in a new tab
+        }
+    </script>
+
+</body>
+</html>
