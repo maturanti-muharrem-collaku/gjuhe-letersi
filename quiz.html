@@ -1,151 +1,95 @@
 <!DOCTYPE html>
-<html lang="sq">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz mbi Balzakun</title>
+    <title>Microsoft Form Viewer</title>
     <style>
-        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #27ae60); /* Dark green gradient */
+            color: #ecf0f1;
             margin: 0;
             padding: 0;
-            color: #333;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: linear-gradient(90deg, #22fa08, #13e7ee, #13e7ee, #fa08f3);
-            background-size: 400% 400%;
-            animation: gradientAnimation 7s ease infinite;
-        }
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            25% {
-                background-position: 50% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            75% {
-                background-position: 50% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-       
-        header {
-            background-color: #6A1B9A;
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 7px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 10px;
-            margin-top: 20px;
-            background-color: #00ff64;
-            height: 35px;
-            border-radius: 30px;
-            box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            transition: background 0.5s ease;
         }
 
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
+        header {
+            background-color: #27ae60; /* Dark Green Header */
             color: white;
-            text-decoration: none;
-            font-size: 18px;
+            padding: 30px;
+            width: 100%;
+            text-align: center;
+            font-size: 28px;
             font-weight: bold;
-            transition: color 0.3s ease-in-out;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
         }
 
-        nav ul li a:hover {
-            color: #ad04f1;
+        .container {
+            width: 90%;
+            max-width: 900px;
+            padding: 30px;
+            background-color: #34495e; /* Slightly lighter dark background */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-container {
+            text-align: center;
+        }
+
+        .form-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #27ae60; /* Dark Green Button */
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container button:hover {
+            background-color: #2ecc71; /* Lighter Green Hover */
             transform: scale(1.05);
         }
 
-        /* Content Styles */
-        .content {
-            background: white;
-            margin-top: 70px;
-            padding: 40px 60px;
-            position: relative;
+        .form-container button:active {
+            transform: scale(0.98);
+        }
+
+        .form-container button i {
+            margin-right: 10px;
+        }
+
+        .footer {
+            color: #ecf0f1;
+            margin-top: 30px;
+            font-size: 14px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            transition: transform 0.5s ease-in-out;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .content:hover {
-            transform: translateY(-40px);
+        .footer a {
+            color: #ecf0f1;
+            text-decoration: none;
         }
 
-        .content h2 {
-            font-size: 32px;
-            color: #333;
-            font-weight: 600;
-            background: linear-gradient(90deg, #22fa08, #13e7ee, #fa08f3);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .content p {
-            font-size: 18px;
-            color: #666;
-            margin: 20px 0;
-            line-height: 1.6;
-        }
-
-        .content button {
-            padding: 15px 30px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 18px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .content button:hover {
-            background-color: #6A1B9A;
-            transform: scale(1.1);
-        }
-
-        /* Footer */
-        footer {
-            background-color: purple;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 15px;
-            position: relative;
-            bottom: 10px;
-            width: 100%;
+        .footer a:hover {
+            text-decoration: underline;
         }
 
     </style>
@@ -153,29 +97,28 @@
 <body>
 
     <header>
-        <section>
-            <h1>Programi Matura</h1>
-            <h2>Provoni njohuritë</h2>
-            <nav>
-                <ul>
-                    <li><a href="xhagorio.html">Kthehu</a></li>
-                </ul>
-            </nav>
-        </section>
+        Microsoft Form Viewer
     </header>
 
-    <div class="content">
-        <h2>Provoni njohuritë tuaja</h2>
-        <p>Klikoni në lidhjen më poshtë për të hyrë në Kahoot dhe për të testuar njohuritë tuaja:</p>
-        <a href="https://play.kahoot.it/v2/?quizId=7e01f049-d514-4e4f-8d47-b5fd86d65b51&hostId=59ac1bda-49a2-49c4-8dfc-4b86e6711300" target="_blank">
-            <button>Shko në Kahoot</button>
-        </a>
+    <div class="container">
+        <div class="form-container">
+            <button onclick="openForm()">
+                <i class="fa fa-paper-plane"></i> Open the Form
+            </button>
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; Maturanti "Muharrem Collaku" - Të gjitha të drejtat e rezervuara.</p>
-    </footer>
+    <div class="footer">
+        <p>Powered by <a href="https://www.microsoft.com/en-us/microsoft-365/forms" target="_blank">Microsoft Forms</a> | Designed with care</p>
+    </div>
 
+    <script>
+        function openForm() {
+            // Fixed Microsoft Form URL (replace with your actual form URL)
+            const formURL = "https://forms.office.com/r/tGgzpmZNT5";  // Replace with your actual form URL
+            window.open(formURL, '_blank');  // Opens the form in a new tab
+        }
+    </script>
 
 </body>
 </html>
