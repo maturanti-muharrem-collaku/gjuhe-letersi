@@ -118,6 +118,98 @@ body {
         section .toggle::after {
             content: "▸";
         }
+      footer {
+      background: #333;
+      color: #fff;
+      padding: 30px;
+      position: relative;
+      text-align: center;
+      border-radius: 12px 12px 0 0;
+      margin-top: 30px;
+    }
+
+    footer h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    /* Star Rating System */
+    #star-rating {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .star {
+      font-size: 40px;
+      color: #ddd;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .star.selected {
+      color: gold;
+    }
+
+    /* Submit Feedback Button */
+    .submit-btn {
+      padding: 12px 25px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1em;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+    }
+
+    .submit-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Results Button */
+    .results-btn {
+      padding: 12px 25px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1em;
+      text-transform: uppercase;
+      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .results-btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive design for mobile devices */
+    @media (max-width: 600px) {
+      footer h2 {
+        font-size: 1.6em;
+      }
+
+      .submit-btn, .results-btn {
+        width: 100%;
+        padding: 15px;
+      }
+
+      #star-rating {
+        font-size: 25px;
+      }
+    }
     </style>
 </head>
 <body>
@@ -364,8 +456,67 @@ Një tjetër mesazh i romanit është rëndësia e ruajtjes së integritetit mor
     </script>
 
     <footer>
-        <p>&copy; Vlerësojmë veten</p>
-        <p><a href="feedback.html" target="_blank">Kliko këtu për feedback</a></p>
+       <h2>Na jepni Feedback!</h2>
+
+    <!-- Star Rating System -->
+    <div id="star-rating">
+      <span class="star" data-value="1">★</span>
+      <span class="star" data-value="2">★</span>
+      <span class="star" data-value="3">★</span>
+      <span class="star" data-value="4">★</span>
+      <span class="star" data-value="5">★</span>
+    </div>
+
+    <button id="submit-feedback" class="submit-btn" disabled>Dërgo Feedback</button>
+
+    <!-- Button to view results -->
+    <a href="results.html">
+      <button id="show-results" class="results-btn">Kliko për të parë rezultatet</button>
+    </a>
     </footer>
+<script>
+  // Initialize variables
+  const stars = document.querySelectorAll('.star');
+  let selectedRating = 0;
+
+  // Update star selection
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = star.getAttribute('data-value');
+      updateStarSelection(selectedRating);
+    });
+  });
+
+  // Update the stars to reflect the selected rating
+  function updateStarSelection(rating) {
+    stars.forEach(star => {
+      if (star.getAttribute('data-value') <= rating) {
+        star.classList.add('selected');
+      } else {
+        star.classList.remove('selected');
+      }
+    });
+    // Enable submit button
+    document.getElementById('submit-feedback').disabled = false;
+  }
+
+  // Handle feedback submission
+  document.getElementById('submit-feedback').addEventListener('click', () => {
+    if (selectedRating > 0) {
+      // Save feedback in local storage
+      saveFeedback(selectedRating);
+      // Disable submit button after submission
+      document.getElementById('submit-feedback').disabled = true;
+    }
+  });
+
+  // Save feedback to local storage
+  function saveFeedback(rating) {
+    let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    feedbacks.push(rating);
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+    alert('Faleminderit për feedback!');
+  }
+</script>
 </body>
 </html>
