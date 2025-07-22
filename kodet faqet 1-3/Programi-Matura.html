@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Book Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+      font-family:; sans-serif;
+      background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Bibloteka-Background.jpg');
+    backdrop-filter: blur(3px); /* This creates the blur */
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+  background-size: cover;
+      
+    }
+    
+    p{
+      text-align: center;
+      font-size: 50px;
+    }
+    
+    
+    header {
+  position: sticky ;
+  font-size: 2px;
+  z-index: 10;
+  border-bottom: 1px solid #ccc;
+
+     text-align: center; /* Centers the text */
+      color: #333;
+      font-size: 2.5em; /* Adjust the title size */
+      margin-bottom: 20px; /* Space between the title and the grid */
+      width: 100%;
+      height: 200px;
+      padding: 30px;
+      font-family: Meie Script;
+      animation: gradient-animation 18s ease infinite;
+      color: white;
+}
+
+
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      justify-items: center;
+       margin: 0 auto; /* Center the grid container */
+      max-height: 80vh; /* Set max height for the container to trigger scroll */
+      overflow-y: auto; 
+    }
+
+    .book {
+      position: relative;
+      width: 100%;
+      max-width: 180px;
+      height: 250px;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+      perspective: 1000px;
+    }
+
+    .cover {
+      background-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-origin: left center;
+      z-index: 10;
+      transition: transform 1s ease-in-out;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+    }
+
+    .book:hover .cover {
+      transform: rotateY(-30deg);
+    }
+
+    .pages {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+    }
+
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: white;
+      transform-origin: left center;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 1s ease-in-out;
+    }
+
+    .page:nth-child(1) { z-index: 9; }
+    .book:hover .page:nth-child(1) { transform: rotateY(-20deg); }
+
+    .page:nth-child(2) { z-index: 8; }
+    .book:hover .page:nth-child(2) { transform: rotateY(-15deg); }
+
+    .page:nth-child(3) { z-index: 7; }
+    .book:hover .page:nth-child(3) { transform: rotateY(-10deg); }
+
+    .page:nth-child(4) { z-index: 6; }
+    .book:hover .page:nth-child(4) { transform: rotateY(-5deg); }
+
+    .page:nth-child(5) { z-index: 5; }
+    .book:hover .page:nth-child(5) { transform: rotateY(-2deg); }
+
+    .page-content {
+      padding: 10px;
+      font-size: 14px;
+      color: #333;
+      font-family: Calligraphy;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .book {
+        height: 220px;
+        max-width: 140px;
+      }
+    }
+  .container {
+ width: 300px;
+    height: 200px;
+    background: #330000;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    }
+
+    .container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Biblioteka Virtuale</h1>
+  </header>
+
+<div class="grid">
+ <!-- Book 1 -->
+<div class="book">
+  <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Xha%20Gorio-Kopertina.jpg');"></div>
+  <div class="pages">
+    <div class="page"><div class="page-content"></div></div>
+    <div class="page"><div class="page-content"></div></div>
+    <div class="page"><div class="page-content"></div></div>
+    <div class="page"><div class="page-content"></div></div>
+    <div class="page"><div class="page-content"></div></div>
+  </div>
+</div>
+
+<!-- Book 2 -->
+<div class="book">
+  <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Prometeu-Kopertina.jpg');"></div>
+  <div class="pages">
+    <div class="page"><div class="page-content"></div></div>
+    <div class="page"><div class="page-content"></div></div>
+    <div class="page"><div class="page-content"></div></div>
+    <div class="page"><div class="page-content"></div></div>
+    <div class="page"><div class="page-content"></div></div>
+  </div>
+</div>
+
+
+  <!-- Book 3 -->
+  <div class="book">
+    <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Cikli%20i%20Kreshnikeve-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Metamorfoza-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Iliada-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Fausti-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/KomediaHyjnore-Dante%20Aligeri.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+    <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/ShokuZylo-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Katedralia-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+    <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/LirikeneShi-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/LuletEVeres-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/YlliiZemres-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/KengeteMilosaos-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Migjeni-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+    <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/PallatiIEndrrave-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+   <div class="book">
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Hamleti-Kopertina.jpg');"></div>
+    <div class="pages">
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+      <div class="page"><div class="page-content"></div></div>
+    </div>
+  </div>
+
+</div>
+<div class="container">
+  <p style="color: white;">FAQJA KRYESORE</p>
+ </div>
+    
+    
+    
+        
+        
+        
+        
+      </div></div>
+      ...
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
